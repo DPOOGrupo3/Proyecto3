@@ -1,0 +1,692 @@
+[
+  {
+    "descripcion": "Recurso educativo para Basket",
+    "objetivo": "Objetivo del recurso",
+    "tipo": "RE",
+    "contenido": {
+      "recurso": "PDF del recurso",
+      "tipo": "PDF"
+    },
+    "nivelDificultad": "2",
+    "duracionEsperada": "2.0",
+    "ID": "0",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Tarea de Basket",
+    "objetivo": "Objetivo de la tarea",
+    "tipo": "T",
+    "contenido": {"ejercicios": [
+      "Ejercicio 1",
+      "Ejercicio 2"
+    ]},
+    "nivelDificultad": "3",
+    "duracionEsperada": "3.0",
+    "ID": "1",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Quiz de Basket",
+    "objetivo": "Objetivo del quiz",
+    "tipo": "Q",
+    "contenido": {
+      "respuestas": [
+        "Respuesta 1",
+        "Respuesta 2"
+      ],
+      "calificacionMin": "75.0",
+      "preguntas": [
+        "Pregunta 1",
+        "Pregunta 2"
+      ]
+    },
+    "nivelDificultad": "4",
+    "duracionEsperada": "1.5",
+    "ID": "2",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Parcial de Basket",
+    "objetivo": "Objetivo del parcial",
+    "tipo": "P",
+    "contenido": {"preguntas": [
+      "Pregunta abierta 1",
+      "Pregunta abierta 2"
+    ]},
+    "nivelDificultad": "5",
+    "duracionEsperada": "4.0",
+    "ID": "3",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Encuesta de Basket",
+    "objetivo": "Objetivo de la encuesta",
+    "tipo": "E",
+    "contenido": {"preguntas": ["Pregunta de opinión 1"]},
+    "nivelDificultad": "1",
+    "duracionEsperada": "1.0",
+    "ID": "4",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Recurso educativo para Arquitectura empresarial",
+    "objetivo": "Objetivo del recurso",
+    "tipo": "RE",
+    "contenido": {
+      "recurso": "PDF del recurso",
+      "tipo": "PDF"
+    },
+    "nivelDificultad": "2",
+    "duracionEsperada": "2.0",
+    "ID": "5",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Tarea de Arquitectura empresarial",
+    "objetivo": "Objetivo de la tarea",
+    "tipo": "T",
+    "contenido": {"ejercicios": [
+      "Ejercicio 1",
+      "Ejercicio 2"
+    ]},
+    "nivelDificultad": "3",
+    "duracionEsperada": "3.0",
+    "ID": "6",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Quiz de Arquitectura empresarial",
+    "objetivo": "Objetivo del quiz",
+    "tipo": "Q",
+    "contenido": {
+      "respuestas": [
+        "Respuesta 1",
+        "Respuesta 2"
+      ],
+      "calificacionMin": "75.0",
+      "preguntas": [
+        "Pregunta 1",
+        "Pregunta 2"
+      ]
+    },
+    "nivelDificultad": "4",
+    "duracionEsperada": "1.5",
+    "ID": "7",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Parcial de Arquitectura empresarial",
+    "objetivo": "Objetivo del parcial",
+    "tipo": "P",
+    "contenido": {"preguntas": [
+      "Pregunta abierta 1",
+      "Pregunta abierta 2"
+    ]},
+    "nivelDificultad": "5",
+    "duracionEsperada": "4.0",
+    "ID": "8",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Encuesta de Arquitectura empresarial",
+    "objetivo": "Objetivo de la encuesta",
+    "tipo": "E",
+    "contenido": {"preguntas": ["Pregunta de opinión 1"]},
+    "nivelDificultad": "1",
+    "duracionEsperada": "1.0",
+    "ID": "9",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Recurso educativo para Infratec",
+    "objetivo": "Objetivo del recurso",
+    "tipo": "RE",
+    "contenido": {
+      "recurso": "PDF del recurso",
+      "tipo": "PDF"
+    },
+    "nivelDificultad": "2",
+    "duracionEsperada": "2.0",
+    "ID": "10",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Tarea de Infratec",
+    "objetivo": "Objetivo de la tarea",
+    "tipo": "T",
+    "contenido": {"ejercicios": [
+      "Ejercicio 1",
+      "Ejercicio 2"
+    ]},
+    "nivelDificultad": "3",
+    "duracionEsperada": "3.0",
+    "ID": "11",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Quiz de Infratec",
+    "objetivo": "Objetivo del quiz",
+    "tipo": "Q",
+    "contenido": {
+      "respuestas": [
+        "Respuesta 1",
+        "Respuesta 2"
+      ],
+      "calificacionMin": "75.0",
+      "preguntas": [
+        "Pregunta 1",
+        "Pregunta 2"
+      ]
+    },
+    "nivelDificultad": "4",
+    "duracionEsperada": "1.5",
+    "ID": "12",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Parcial de Infratec",
+    "objetivo": "Objetivo del parcial",
+    "tipo": "P",
+    "contenido": {"preguntas": [
+      "Pregunta abierta 1",
+      "Pregunta abierta 2"
+    ]},
+    "nivelDificultad": "5",
+    "duracionEsperada": "4.0",
+    "ID": "13",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Encuesta de Infratec",
+    "objetivo": "Objetivo de la encuesta",
+    "tipo": "E",
+    "contenido": {"preguntas": ["Pregunta de opinión 1"]},
+    "nivelDificultad": "1",
+    "duracionEsperada": "1.0",
+    "ID": "14",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Recurso educativo para Materiales",
+    "objetivo": "Objetivo del recurso",
+    "tipo": "RE",
+    "contenido": {
+      "recurso": "PDF del recurso",
+      "tipo": "PDF"
+    },
+    "nivelDificultad": "2",
+    "duracionEsperada": "2.0",
+    "ID": "15",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Tarea de Materiales",
+    "objetivo": "Objetivo de la tarea",
+    "tipo": "T",
+    "contenido": {"ejercicios": [
+      "Ejercicio 1",
+      "Ejercicio 2"
+    ]},
+    "nivelDificultad": "3",
+    "duracionEsperada": "3.0",
+    "ID": "16",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Quiz de Materiales",
+    "objetivo": "Objetivo del quiz",
+    "tipo": "Q",
+    "contenido": {
+      "respuestas": [
+        "Respuesta 1",
+        "Respuesta 2"
+      ],
+      "calificacionMin": "75.0",
+      "preguntas": [
+        "Pregunta 1",
+        "Pregunta 2"
+      ]
+    },
+    "nivelDificultad": "4",
+    "duracionEsperada": "1.5",
+    "ID": "17",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Parcial de Materiales",
+    "objetivo": "Objetivo del parcial",
+    "tipo": "P",
+    "contenido": {"preguntas": [
+      "Pregunta abierta 1",
+      "Pregunta abierta 2"
+    ]},
+    "nivelDificultad": "5",
+    "duracionEsperada": "4.0",
+    "ID": "18",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Encuesta de Materiales",
+    "objetivo": "Objetivo de la encuesta",
+    "tipo": "E",
+    "contenido": {"preguntas": ["Pregunta de opinión 1"]},
+    "nivelDificultad": "1",
+    "duracionEsperada": "1.0",
+    "ID": "19",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Recurso educativo para DPOO",
+    "objetivo": "Objetivo del recurso",
+    "tipo": "RE",
+    "contenido": {
+      "recurso": "PDF del recurso",
+      "tipo": "PDF"
+    },
+    "nivelDificultad": "2",
+    "duracionEsperada": "2.0",
+    "ID": "20",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Tarea de DPOO",
+    "objetivo": "Objetivo de la tarea",
+    "tipo": "T",
+    "contenido": {"ejercicios": [
+      "Ejercicio 1",
+      "Ejercicio 2"
+    ]},
+    "nivelDificultad": "3",
+    "duracionEsperada": "3.0",
+    "ID": "21",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Quiz de DPOO",
+    "objetivo": "Objetivo del quiz",
+    "tipo": "Q",
+    "contenido": {
+      "respuestas": [
+        "Respuesta 1",
+        "Respuesta 2"
+      ],
+      "calificacionMin": "75.0",
+      "preguntas": [
+        "Pregunta 1",
+        "Pregunta 2"
+      ]
+    },
+    "nivelDificultad": "4",
+    "duracionEsperada": "1.5",
+    "ID": "22",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Parcial de DPOO",
+    "objetivo": "Objetivo del parcial",
+    "tipo": "P",
+    "contenido": {"preguntas": [
+      "Pregunta abierta 1",
+      "Pregunta abierta 2"
+    ]},
+    "nivelDificultad": "5",
+    "duracionEsperada": "4.0",
+    "ID": "23",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Encuesta de DPOO",
+    "objetivo": "Objetivo de la encuesta",
+    "tipo": "E",
+    "contenido": {"preguntas": ["Pregunta de opinión 1"]},
+    "nivelDificultad": "1",
+    "duracionEsperada": "1.0",
+    "ID": "24",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Recurso educativo para Álgebra",
+    "objetivo": "Objetivo del recurso",
+    "tipo": "RE",
+    "contenido": {
+      "recurso": "PDF del recurso",
+      "tipo": "PDF"
+    },
+    "nivelDificultad": "2",
+    "duracionEsperada": "2.0",
+    "ID": "25",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Tarea de Álgebra",
+    "objetivo": "Objetivo de la tarea",
+    "tipo": "T",
+    "contenido": {"ejercicios": [
+      "Ejercicio 1",
+      "Ejercicio 2"
+    ]},
+    "nivelDificultad": "3",
+    "duracionEsperada": "3.0",
+    "ID": "26",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Quiz de Álgebra",
+    "objetivo": "Objetivo del quiz",
+    "tipo": "Q",
+    "contenido": {
+      "respuestas": [
+        "Respuesta 1",
+        "Respuesta 2"
+      ],
+      "calificacionMin": "75.0",
+      "preguntas": [
+        "Pregunta 1",
+        "Pregunta 2"
+      ]
+    },
+    "nivelDificultad": "4",
+    "duracionEsperada": "1.5",
+    "ID": "27",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Parcial de Álgebra",
+    "objetivo": "Objetivo del parcial",
+    "tipo": "P",
+    "contenido": {"preguntas": [
+      "Pregunta abierta 1",
+      "Pregunta abierta 2"
+    ]},
+    "nivelDificultad": "5",
+    "duracionEsperada": "4.0",
+    "ID": "28",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Encuesta de Álgebra",
+    "objetivo": "Objetivo de la encuesta",
+    "tipo": "E",
+    "contenido": {"preguntas": ["Pregunta de opinión 1"]},
+    "nivelDificultad": "1",
+    "duracionEsperada": "1.0",
+    "ID": "29",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Recurso educativo para Diseño sistemas satelitales",
+    "objetivo": "Objetivo del recurso",
+    "tipo": "RE",
+    "contenido": {
+      "recurso": "PDF del recurso",
+      "tipo": "PDF"
+    },
+    "nivelDificultad": "2",
+    "duracionEsperada": "2.0",
+    "ID": "30",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Tarea de Diseño sistemas satelitales",
+    "objetivo": "Objetivo de la tarea",
+    "tipo": "T",
+    "contenido": {"ejercicios": [
+      "Ejercicio 1",
+      "Ejercicio 2"
+    ]},
+    "nivelDificultad": "3",
+    "duracionEsperada": "3.0",
+    "ID": "31",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Quiz de Diseño sistemas satelitales",
+    "objetivo": "Objetivo del quiz",
+    "tipo": "Q",
+    "contenido": {
+      "respuestas": [
+        "Respuesta 1",
+        "Respuesta 2"
+      ],
+      "calificacionMin": "75.0",
+      "preguntas": [
+        "Pregunta 1",
+        "Pregunta 2"
+      ]
+    },
+    "nivelDificultad": "4",
+    "duracionEsperada": "1.5",
+    "ID": "32",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Parcial de Diseño sistemas satelitales",
+    "objetivo": "Objetivo del parcial",
+    "tipo": "P",
+    "contenido": {"preguntas": [
+      "Pregunta abierta 1",
+      "Pregunta abierta 2"
+    ]},
+    "nivelDificultad": "5",
+    "duracionEsperada": "4.0",
+    "ID": "33",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Encuesta de Diseño sistemas satelitales",
+    "objetivo": "Objetivo de la encuesta",
+    "tipo": "E",
+    "contenido": {"preguntas": ["Pregunta de opinión 1"]},
+    "nivelDificultad": "1",
+    "duracionEsperada": "1.0",
+    "ID": "34",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Recurso educativo para Laboratorio Materiales",
+    "objetivo": "Objetivo del recurso",
+    "tipo": "RE",
+    "contenido": {
+      "recurso": "PDF del recurso",
+      "tipo": "PDF"
+    },
+    "nivelDificultad": "2",
+    "duracionEsperada": "2.0",
+    "ID": "35",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Tarea de Laboratorio Materiales",
+    "objetivo": "Objetivo de la tarea",
+    "tipo": "T",
+    "contenido": {"ejercicios": [
+      "Ejercicio 1",
+      "Ejercicio 2"
+    ]},
+    "nivelDificultad": "3",
+    "duracionEsperada": "3.0",
+    "ID": "36",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Quiz de Laboratorio Materiales",
+    "objetivo": "Objetivo del quiz",
+    "tipo": "Q",
+    "contenido": {
+      "respuestas": [
+        "Respuesta 1",
+        "Respuesta 2"
+      ],
+      "calificacionMin": "75.0",
+      "preguntas": [
+        "Pregunta 1",
+        "Pregunta 2"
+      ]
+    },
+    "nivelDificultad": "4",
+    "duracionEsperada": "1.5",
+    "ID": "37",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Parcial de Laboratorio Materiales",
+    "objetivo": "Objetivo del parcial",
+    "tipo": "P",
+    "contenido": {"preguntas": [
+      "Pregunta abierta 1",
+      "Pregunta abierta 2"
+    ]},
+    "nivelDificultad": "5",
+    "duracionEsperada": "4.0",
+    "ID": "38",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Encuesta de Laboratorio Materiales",
+    "objetivo": "Objetivo de la encuesta",
+    "tipo": "E",
+    "contenido": {"preguntas": ["Pregunta de opinión 1"]},
+    "nivelDificultad": "1",
+    "duracionEsperada": "1.0",
+    "ID": "39",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Recurso educativo para EDA",
+    "objetivo": "Objetivo del recurso",
+    "tipo": "RE",
+    "contenido": {
+      "recurso": "PDF del recurso",
+      "tipo": "PDF"
+    },
+    "nivelDificultad": "2",
+    "duracionEsperada": "2.0",
+    "ID": "40",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Tarea de EDA",
+    "objetivo": "Objetivo de la tarea",
+    "tipo": "T",
+    "contenido": {"ejercicios": [
+      "Ejercicio 1",
+      "Ejercicio 2"
+    ]},
+    "nivelDificultad": "3",
+    "duracionEsperada": "3.0",
+    "ID": "41",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Quiz de EDA",
+    "objetivo": "Objetivo del quiz",
+    "tipo": "Q",
+    "contenido": {
+      "respuestas": [
+        "Respuesta 1",
+        "Respuesta 2"
+      ],
+      "calificacionMin": "75.0",
+      "preguntas": [
+        "Pregunta 1",
+        "Pregunta 2"
+      ]
+    },
+    "nivelDificultad": "4",
+    "duracionEsperada": "1.5",
+    "ID": "42",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Parcial de EDA",
+    "objetivo": "Objetivo del parcial",
+    "tipo": "P",
+    "contenido": {"preguntas": [
+      "Pregunta abierta 1",
+      "Pregunta abierta 2"
+    ]},
+    "nivelDificultad": "5",
+    "duracionEsperada": "4.0",
+    "ID": "43",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Encuesta de EDA",
+    "objetivo": "Objetivo de la encuesta",
+    "tipo": "E",
+    "contenido": {"preguntas": ["Pregunta de opinión 1"]},
+    "nivelDificultad": "1",
+    "duracionEsperada": "1.0",
+    "ID": "44",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Recurso educativo para Cálculo diferencial",
+    "objetivo": "Objetivo del recurso",
+    "tipo": "RE",
+    "contenido": {
+      "recurso": "PDF del recurso",
+      "tipo": "PDF"
+    },
+    "nivelDificultad": "2",
+    "duracionEsperada": "2.0",
+    "ID": "45",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Tarea de Cálculo diferencial",
+    "objetivo": "Objetivo de la tarea",
+    "tipo": "T",
+    "contenido": {"ejercicios": [
+      "Ejercicio 1",
+      "Ejercicio 2"
+    ]},
+    "nivelDificultad": "3",
+    "duracionEsperada": "3.0",
+    "ID": "46",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Quiz de Cálculo diferencial",
+    "objetivo": "Objetivo del quiz",
+    "tipo": "Q",
+    "contenido": {
+      "respuestas": [
+        "Respuesta 1",
+        "Respuesta 2"
+      ],
+      "calificacionMin": "75.0",
+      "preguntas": [
+        "Pregunta 1",
+        "Pregunta 2"
+      ]
+    },
+    "nivelDificultad": "4",
+    "duracionEsperada": "1.5",
+    "ID": "47",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Parcial de Cálculo diferencial",
+    "objetivo": "Objetivo del parcial",
+    "tipo": "P",
+    "contenido": {"preguntas": [
+      "Pregunta abierta 1",
+      "Pregunta abierta 2"
+    ]},
+    "nivelDificultad": "5",
+    "duracionEsperada": "4.0",
+    "ID": "48",
+    "preRequisitos": []
+  },
+  {
+    "descripcion": "Encuesta de Cálculo diferencial",
+    "objetivo": "Objetivo de la encuesta",
+    "tipo": "E",
+    "contenido": {"preguntas": ["Pregunta de opinión 1"]},
+    "nivelDificultad": "1",
+    "duracionEsperada": "1.0",
+    "ID": "49",
+    "preRequisitos": []
+  }
+]

@@ -1,0 +1,335 @@
+{
+  "profesores": [
+    {
+      "caminosCreados": [
+        "0",
+        "1"
+      ],
+      "correo": "j.vasquez@gmail.com",
+      "contrasena": "Jero123",
+      "nombre": "Jeronimo Vasquez"
+    },
+    {
+      "caminosCreados": [
+        "2",
+        "3"
+      ],
+      "correo": "j.zarruk@gmail.com",
+      "contrasena": "Jacobo123",
+      "nombre": "Jacobo Zarruk"
+    },
+    {
+      "caminosCreados": [
+        "4",
+        "5"
+      ],
+      "correo": "j.fierro@gmail.com",
+      "contrasena": "Jairo123",
+      "nombre": "Jairo Fierro"
+    },
+    {
+      "caminosCreados": [
+        "6",
+        "7"
+      ],
+      "correo": "j.arenas@gmail.com",
+      "contrasena": "Juan123",
+      "nombre": "Juan Pablo Arenas"
+    },
+    {
+      "caminosCreados": [
+        "8",
+        "9"
+      ],
+      "correo": "d.quintero@gmail.com",
+      "contrasena": "Daniel123",
+      "nombre": "Daniel Quintero"
+    }
+  ],
+  "estudiantes": [
+    {
+      "correo": "sofia.z@gmail.com",
+      "contrasena": "Sofia123",
+      "caminosInscritos": [
+        {
+          "actividadesTerminadas": [],
+          "ID": "1",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "actividadesTerminadas": [],
+          "ID": "2",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        },
+        {
+          "actividadesTerminadas": [],
+          "ID": "6",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "30",
+            "31",
+            "32",
+            "33",
+            "34"
+          ]
+        },
+        {
+          "actividadesTerminadas": [],
+          "ID": "0",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        }
+      ],
+      "nombre": "Sofia Zarruk"
+    },
+    {
+      "correo": "juliana.c@gmail.com",
+      "contrasena": "Juliana123",
+      "caminosInscritos": [
+        {
+          "actividadesTerminadas": [],
+          "ID": "2",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        },
+        {
+          "actividadesTerminadas": [],
+          "ID": "3",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "15",
+            "16",
+            "17",
+            "18",
+            "19"
+          ]
+        }
+      ],
+      "nombre": "Juliana Colmenares"
+    },
+    {
+      "correo": "david.s@gmail.com",
+      "contrasena": "David123",
+      "caminosInscritos": [
+        {
+          "actividadesTerminadas": [],
+          "ID": "5",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "25",
+            "26",
+            "27",
+            "28",
+            "29"
+          ]
+        },
+        {
+          "actividadesTerminadas": [],
+          "ID": "4",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"
+          ]
+        }
+      ],
+      "nombre": "David Sanabria"
+    },
+    {
+      "correo": "laura.s@gmail.com",
+      "contrasena": "Laura123",
+      "caminosInscritos": [
+        {
+          "actividadesTerminadas": [],
+          "ID": "7",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "35",
+            "36",
+            "37",
+            "38",
+            "39"
+          ]
+        },
+        {
+          "actividadesTerminadas": [],
+          "ID": "6",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "30",
+            "31",
+            "32",
+            "33",
+            "34"
+          ]
+        }
+      ],
+      "nombre": "Laura Sofia"
+    },
+    {
+      "correo": "valeria.s@gmail.com",
+      "contrasena": "Valeria123",
+      "caminosInscritos": [
+        {
+          "actividadesTerminadas": [],
+          "ID": "9",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "45",
+            "46",
+            "47",
+            "48",
+            "49"
+          ]
+        },
+        {
+          "actividadesTerminadas": [],
+          "ID": "8",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+          ]
+        }
+      ],
+      "nombre": "Valeria Suarez"
+    },
+    {
+      "correo": "angel.f@gmail.com",
+      "contrasena": "Angel123",
+      "caminosInscritos": [
+        {
+          "actividadesTerminadas": [],
+          "ID": "2",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        },
+        {
+          "actividadesTerminadas": [],
+          "ID": "0",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        }
+      ],
+      "nombre": "Angel Farfan"
+    },
+    {
+      "correo": "sebastian.g@gmail.com",
+      "contrasena": "Sebastian123",
+      "caminosInscritos": [
+        {
+          "actividadesTerminadas": [],
+          "ID": "5",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "25",
+            "26",
+            "27",
+            "28",
+            "29"
+          ]
+        },
+        {
+          "actividadesTerminadas": [],
+          "ID": "3",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "15",
+            "16",
+            "17",
+            "18",
+            "19"
+          ]
+        }
+      ],
+      "nombre": "Sebastina Gomez"
+    },
+    {
+      "correo": "sebastian.r@gmail.com",
+      "contrasena": "SebastianR123",
+      "caminosInscritos": [
+        {
+          "actividadesTerminadas": [],
+          "ID": "8",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+          ]
+        },
+        {
+          "actividadesTerminadas": [],
+          "ID": "6",
+          "porcentaje": "0.0",
+          "actividadesPendientes": [
+            "30",
+            "31",
+            "32",
+            "33",
+            "34"
+          ]
+        }
+      ],
+      "nombre": "Sebastian Rodriguez"
+    },
+    {
+      "correo": "AuraHermosa@gmail.com",
+      "contrasena": "AuritaLinda",
+      "caminosInscritos": [],
+      "nombre": "La hermana de jairo"
+    },
+    {
+      "correo": "jimmy.m@gmail.com",
+      "contrasena": "Jimmy123",
+      "caminosInscritos": [],
+      "nombre": "Jimmy Mujica"
+    }
+  ]
+}

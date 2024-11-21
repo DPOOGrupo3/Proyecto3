@@ -1,0 +1,202 @@
+[
+  {
+    "descripcion": "Descripción de Basket",
+    "objetivo": "Objetivo de Basket",
+    "fechaModificacion": "Sat Jan 20 21:31:10 COT 2024",
+    "raters": "0",
+    "rating": "0.0",
+    "titulo": "Basket",
+    "duracion": "11.5",
+    "fechaCreacion": "Sat Jan 20 21:31:10 COT 2024",
+    "ID": "0",
+    "actividades": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "version": "1",
+    "dificultad": "2"
+  },
+  {
+    "descripcion": "Descripción de Arquitectura empresarial",
+    "objetivo": "Objetivo de Arquitectura empresarial",
+    "fechaModificacion": "Sat Jan 20 21:31:10 COT 2024",
+    "raters": "0",
+    "rating": "0.0",
+    "titulo": "Arquitectura empresarial",
+    "duracion": "11.5",
+    "fechaCreacion": "Sat Jan 20 21:31:10 COT 2024",
+    "ID": "1",
+    "actividades": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "version": "1",
+    "dificultad": "2"
+  },
+  {
+    "descripcion": "Descripción de Infratec",
+    "objetivo": "Objetivo de Infratec",
+    "fechaModificacion": "Sat Jan 20 21:31:10 COT 2024",
+    "raters": "0",
+    "rating": "0.0",
+    "titulo": "Infratec",
+    "duracion": "11.5",
+    "fechaCreacion": "Sat Jan 20 21:31:10 COT 2024",
+    "ID": "2",
+    "actividades": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "14"
+    ],
+    "version": "1",
+    "dificultad": "2"
+  },
+  {
+    "descripcion": "Descripción de Materiales",
+    "objetivo": "Objetivo de Materiales",
+    "fechaModificacion": "Sat Jan 20 21:31:10 COT 2024",
+    "raters": "0",
+    "rating": "0.0",
+    "titulo": "Materiales",
+    "duracion": "11.5",
+    "fechaCreacion": "Sat Jan 20 21:31:10 COT 2024",
+    "ID": "3",
+    "actividades": [
+      "15",
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "version": "1",
+    "dificultad": "2"
+  },
+  {
+    "descripcion": "Descripción de DPOO",
+    "objetivo": "Objetivo de DPOO",
+    "fechaModificacion": "Sat Jan 20 21:31:10 COT 2024",
+    "raters": "0",
+    "rating": "0.0",
+    "titulo": "DPOO",
+    "duracion": "11.5",
+    "fechaCreacion": "Sat Jan 20 21:31:10 COT 2024",
+    "ID": "4",
+    "actividades": [
+      "20",
+      "21",
+      "22",
+      "23",
+      "24"
+    ],
+    "version": "1",
+    "dificultad": "2"
+  },
+  {
+    "descripcion": "Descripción de Álgebra",
+    "objetivo": "Objetivo de Álgebra",
+    "fechaModificacion": "Sat Jan 20 21:31:10 COT 2024",
+    "raters": "0",
+    "rating": "0.0",
+    "titulo": "Álgebra",
+    "duracion": "11.5",
+    "fechaCreacion": "Sat Jan 20 21:31:10 COT 2024",
+    "ID": "5",
+    "actividades": [
+      "25",
+      "26",
+      "27",
+      "28",
+      "29"
+    ],
+    "version": "1",
+    "dificultad": "2"
+  },
+  {
+    "descripcion": "Descripción de Diseño sistemas satelitales",
+    "objetivo": "Objetivo de Diseño sistemas satelitales",
+    "fechaModificacion": "Sat Jan 20 21:31:10 COT 2024",
+    "raters": "0",
+    "rating": "0.0",
+    "titulo": "Diseño sistemas satelitales",
+    "duracion": "11.5",
+    "fechaCreacion": "Sat Jan 20 21:31:10 COT 2024",
+    "ID": "6",
+    "actividades": [
+      "30",
+      "31",
+      "32",
+      "33",
+      "34"
+    ],
+    "version": "1",
+    "dificultad": "2"
+  },
+  {
+    "descripcion": "Descripción de Laboratorio Materiales",
+    "objetivo": "Objetivo de Laboratorio Materiales",
+    "fechaModificacion": "Sat Jan 20 21:31:10 COT 2024",
+    "raters": "0",
+    "rating": "0.0",
+    "titulo": "Laboratorio Materiales",
+    "duracion": "11.5",
+    "fechaCreacion": "Sat Jan 20 21:31:10 COT 2024",
+    "ID": "7",
+    "actividades": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "39"
+    ],
+    "version": "1",
+    "dificultad": "2"
+  },
+  {
+    "descripcion": "Descripción de EDA",
+    "objetivo": "Objetivo de EDA",
+    "fechaModificacion": "Sat Jan 20 21:31:10 COT 2024",
+    "raters": "0",
+    "rating": "0.0",
+    "titulo": "EDA",
+    "duracion": "11.5",
+    "fechaCreacion": "Sat Jan 20 21:31:10 COT 2024",
+    "ID": "8",
+    "actividades": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "version": "1",
+    "dificultad": "2"
+  },
+  {
+    "descripcion": "Descripción de Cálculo diferencial",
+    "objetivo": "Objetivo de Cálculo diferencial",
+    "fechaModificacion": "Sat Jan 20 21:31:10 COT 2024",
+    "raters": "0",
+    "rating": "0.0",
+    "titulo": "Cálculo diferencial",
+    "duracion": "11.5",
+    "fechaCreacion": "Sat Jan 20 21:31:10 COT 2024",
+    "ID": "9",
+    "actividades": [
+      "45",
+      "46",
+      "47",
+      "48",
+      "49"
+    ],
+    "version": "1",
+    "dificultad": "2"
+  }
+]
