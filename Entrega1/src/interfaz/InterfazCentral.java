@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 import interfaz.panel.PanelInicial;
 import interfaz.panel.PanelIniciar;
-import interfaz.panel.PanelPrincipalProfesor;
+//import interfaz.panel.PanelPrincipalProfesor;
 import interfaz.panel.PanelRegistrar;
 import modelo.CentralLogica;
 import modelo.usuario.Estudiante;
@@ -26,7 +26,7 @@ public class InterfazCentral extends InterfazBasica {
     private PanelInicial pInicial;
     private PanelRegistrar pRegistrar;
     private PanelIniciar pIniciar;
-    private PanelPrincipalProfesor pInProfesor;
+    //private PanelPrincipalProfesor pInProfesor;
     private InterfazEstudiante iEstudiante;
     
     private CentralLogica logica;
@@ -81,7 +81,7 @@ public class InterfazCentral extends InterfazBasica {
 		if (panelNombre == "profesorIni") {
 			lblBienvenido.setText("Bienvenido(a) " + user.getNombre());
 			remove(pIniciar);
-			add(pInProfesor, BorderLayout.CENTER);
+			//add(pInProfesor, BorderLayout.CENTER);
 		}
 		if (panelNombre == "estudianteIni") {
 			lblBienvenido.setText("Bienvenido(a) " + user.getNombre());
@@ -103,7 +103,7 @@ public class InterfazCentral extends InterfazBasica {
 	public void iniciarSesion(String mail, String contra) {
 		user = logica.iniciarSesion(mail, contra);
 		if (user instanceof Profesor) {
-			pInProfesor = new PanelPrincipalProfesor((Profesor) user);
+			//pInProfesor = new PanelPrincipalProfesor((Profesor) user);
 			cambiarPanel("profesorIni");
 		} else if (user instanceof Estudiante) {
 			iEstudiante = new InterfazEstudiante((Estudiante) user, logica);

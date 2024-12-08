@@ -44,6 +44,11 @@ public class Estudiante extends Usuario {
 		return getProgresoLearningPath(camino).getActividadesPendinetes();
 	}
 	
+	public List<Actividad> getActividadesTerminadas(LearningPath camino){
+		return getProgresoLearningPath(camino).getActividadesTerminadas();
+	}
+
+	
 	public Progreso getProgresoLearningPath(LearningPath camino) {
 		return caminosInscritos.get(camino);
 	}

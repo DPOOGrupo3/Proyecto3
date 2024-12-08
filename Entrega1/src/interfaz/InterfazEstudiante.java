@@ -14,12 +14,17 @@ import modelo.actividad.Actividad;
 import modelo.usuario.Estudiante;
 import modelo.Progreso;
 
+
 public class InterfazEstudiante extends JPanel{
 	
 	private Estudiante estudiante;
     private CentralLogica centralLogica;
+    
     private JPanel panelBotones;
     private JTextArea areaInformacion;
+    private Progreso progreso;
+   
+    
     
     
     /**
@@ -30,6 +35,7 @@ public class InterfazEstudiante extends JPanel{
     public InterfazEstudiante(Estudiante estudiante, CentralLogica centralLogica) {
         this.estudiante = estudiante;
         this.centralLogica = centralLogica;
+        
         setLayout(new BorderLayout());
 
         
@@ -57,11 +63,15 @@ public class InterfazEstudiante extends JPanel{
         agregarBoton("Entregar Actividad", e -> entregarActividad());
         agregarBoton("Visualizar Cantidad de Actividades", e -> visualizarActividades());
         agregarBoton("Salir", e -> salir());
-
         
+        
+
+
         add(panelBotones, BorderLayout.WEST);
         add(scroll, BorderLayout.CENTER);
     }
+
+
     
     /**
      * Método para inscribir al estudiante en un Learning Path.
@@ -89,6 +99,8 @@ public class InterfazEstudiante extends JPanel{
         	if (caminoSeleccionado != null) {
         		estudiante.inscribirCamino(caminoSeleccionado);
         		mostrarInformacion("Inscripcion exitosa en: " + caminoSeleccionado.getID() + "- " + caminoSeleccionado.getTitulo());
+        	} else {
+        		mostrarInformacion("Ya estas inscrito en este Learning Path");
         	}
         
         }
@@ -173,21 +185,43 @@ public class InterfazEstudiante extends JPanel{
      */
     
     private void visualizarActividades() {
-        JFrame graficoFrame = new JFrame("Actividades Realizadas vs Pendientes");
-        graficoFrame.setSize(500, 500);
-        graficoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        JPanel panelGrafico = new PanelGrafico(estudiante);
-        graficoFrame.add(panelGrafico);
-        graficoFrame.setVisible(true);
-    }
-    
-    
-    
+    	
+    	LearningPath camino = seleccionarLearningPath();
+    	
+    	
+    	
+        List<Actividad> actividadesPendientes = estudiante.getActividadesPendientes(camino);
+        List<Actividad> actividadesRealizadas = estudiante.getActividadesTerminadas(camino);
         
-    
-    
-    
+        
+        JPanel panelActividades = new JPanel();
+        panelActividades.setLayout(new GridLayout(0, 5, 10, 10)); 
+
+        
+        for (Actividad actividad : actividadesRealizadas) {
+            JPanel panelActividad = new JPanel();
+            panelActividad.setBackground(Color.GREEN);
+            panelActividad.add(new JLabel("ID: " + actividad.getID()));
+            panelActividades.add(panelActividad);
+        }
+
+        
+        for (Actividad actividad : actividadesPendientes) {
+            JPanel panelActividad = new JPanel();
+            panelActividad.setBackground(Color.RED);
+            panelActividad.add(new JLabel("ID: " + actividad.getID()));
+            panelActividades.add(panelActividad);
+        }
+
+        
+        JFrame actividadesFrame = new JFrame("Actividades Realizadas vs Pendientes");
+        actividadesFrame.setSize(600, 400);  
+        actividadesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        actividadesFrame.add(new JScrollPane(panelActividades));
+        actividadesFrame.setVisible(true);
+    }
+
+      
     
     /**
      * Método para salir.
@@ -236,7 +270,14 @@ public class InterfazEstudiante extends JPanel{
                 "Seleccionar Learning Path", JOptionPane.QUESTION_MESSAGE,
                 null, opciones, opciones[0]);
 
-        return seleccion != null ? caminos.get(Integer.parseInt(seleccion.split(" - ")[0])) : null;
+        if (seleccion != null) {
+            int indice = Integer.parseInt(seleccion.split(" - ")[0]);
+            if (indice >= 0 && indice < caminos.size()) {
+                return caminos.get(indice);
+            }
+        }
+        mostrarInformacion("Selección inválida.");
+        return null;
     }
     
     /**
@@ -261,8 +302,18 @@ public class InterfazEstudiante extends JPanel{
                 "Seleccionar Actividad", JOptionPane.QUESTION_MESSAGE,
                 null, opciones, opciones[0]);
 
-        return seleccion != null ? actividades.get(Integer.parseInt(seleccion.split(" - ")[0])) : null;
+
+        if (seleccion != null) {
+            int indice = Integer.parseInt(seleccion.split(" - ")[0]);
+            if (indice >= 0 && indice < actividades.size()) {
+                return actividades.get(indice);
+            }
+        }
+        mostrarInformacion("Selección inválida.");
+        return null;
     }
+    
+    
     
     
 
