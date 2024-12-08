@@ -48,7 +48,7 @@ public class PanelIniciar extends JPanel implements ActionListener, KeyListener 
 		txtPassword.addKeyListener(this);
 		add(txtPassword);
 		
-		btnLogIn = new JButton("Iniciar");
+		btnLogIn = new JButton("Iniciar Sesión");
 		btnLogIn.addActionListener(this);
 		add(btnLogIn);
 		
@@ -57,11 +57,26 @@ public class PanelIniciar extends JPanel implements ActionListener, KeyListener 
 		add(btnAtras);
 	}
 	
+	private void verificarCorreo() {
+		String[] correos = {"@gmail.com", "@hotmail.com", "@outlook.com", "@yahoo.com", "@uniandes.edu.co"};
+		boolean correcto = false;
+		for (String correo: correos) {
+			if (txtCorreo.getText().contains(correo)) {
+				correcto = true;
+			}
+		}
+		if (correcto) {
+			iniciarSesion(txtCorreo.getText().split("@")[0], txtPassword.getText());
+		} else {
+			iniciarSesion(txtCorreo.getText(), txtPassword.getText());
+		}
+	}
+	
 	private void verificarTextoVacio() {
 		if (txtCorreo.getText().isBlank() || txtCorreo.getText().equals("Ingrese su correo") || txtPassword.getText().isBlank() || txtPassword.getText().equals("Ingrese su contraseña")) {
 			JOptionPane.showMessageDialog(this, "No ha rellenado uno o más campos", "Error campo vacio", JOptionPane.WARNING_MESSAGE );
 		} else {
-			iniciarSesion(txtCorreo.getText(), txtPassword.getText());
+			verificarCorreo();
 		}
 	}
 	
@@ -75,7 +90,7 @@ public class PanelIniciar extends JPanel implements ActionListener, KeyListener 
 			verificarTextoVacio();
 		}
 		if (e.getSource() == btnLogIn) {
-			
+			verificarTextoVacio();
 		} else if (e.getSource() == btnAtras) {
 			interfaz.cambiarPanel("inicial");
 		}

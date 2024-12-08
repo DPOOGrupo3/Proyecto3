@@ -101,7 +101,7 @@ public class PanelRegistrar extends JPanel implements ActionListener, KeyListene
 			verificarTextoVacio();
 		}
 		if (e.getSource() == btnRegistrarse) {
-			registrarUsuario();
+			verificarTextoVacio();
 		} else if (e.getSource() == btnAtras) {
 			interfaz.cambiarPanel("inicial");
 		}

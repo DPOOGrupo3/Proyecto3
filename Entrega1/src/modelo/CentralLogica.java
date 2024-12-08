@@ -8,7 +8,7 @@ import modelo.usuario.*;
 import persistencia.CentralPersistencia;
 
 public class CentralLogica {
-	private List<Profesor> profesores;
+	public List<Profesor> profesores;
 	private List<Estudiante> estudiantes;
 	private List<LearningPath> caminos;
 	private List<Actividad> actividades;

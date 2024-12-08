@@ -19,6 +19,7 @@ import javax.swing.JLabel;
 public class InterfazCentral extends InterfazBasica {
 	private final String bienvinidaGenerica = "Bienvenido(a) a Learning Path Recomendation System";
 	private JPanel panelNorte;
+	private JLabel lblBienvenido = new JLabel("");
 	private JPanel panelSur;
     private JPanel panelEste;
     
@@ -26,6 +27,7 @@ public class InterfazCentral extends InterfazBasica {
     private PanelRegistrar pRegistrar;
     private PanelIniciar pIniciar;
     private PanelPrincipalProfesor pInProfesor;
+    private InterfazEstudiante iEstudiante;
     
     private CentralLogica logica;
     private Usuario user = null;
@@ -41,12 +43,7 @@ public class InterfazCentral extends InterfazBasica {
         setLayout(new BorderLayout());
         
         panelNorte = new JPanel();
-        JLabel lblBienvenido = new JLabel("");
-        if (user == null) {
-        	lblBienvenido.setText(bienvinidaGenerica);
-        } else {
-        	lblBienvenido.setText("Bienvenido(a) " + user.getNombre());
-        }
+        lblBienvenido.setText(bienvinidaGenerica);
         lblBienvenido.setForeground(Color.WHITE);
         panelNorte.add(lblBienvenido);
         panelNorte.setBackground(new Color(0, 119, 255));
@@ -64,6 +61,7 @@ public class InterfazCentral extends InterfazBasica {
         add(panelEste, BorderLayout.EAST);
         
         logica = new CentralLogica();
+        logica.cargarDatos();
 	}
 	
 	public void cambiarPanel(String panelNombre) {
@@ -80,9 +78,15 @@ public class InterfazCentral extends InterfazBasica {
 			remove(pInicial);
 			add(pIniciar, BorderLayout.CENTER);
 		}
-		if (panelNombre == "iniProfesor") {
+		if (panelNombre == "profesorIni") {
+			lblBienvenido.setText("Bienvenido(a) " + user.getNombre());
 			remove(pIniciar);
 			add(pInProfesor, BorderLayout.CENTER);
+		}
+		if (panelNombre == "estudianteIni") {
+			lblBienvenido.setText("Bienvenido(a) " + user.getNombre());
+			remove(pIniciar);
+			add(iEstudiante, BorderLayout.CENTER);
 		}
 		repaint();
 		validate();
@@ -100,8 +104,10 @@ public class InterfazCentral extends InterfazBasica {
 		user = logica.iniciarSesion(mail, contra);
 		if (user instanceof Profesor) {
 			pInProfesor = new PanelPrincipalProfesor((Profesor) user);
+			cambiarPanel("profesorIni");
 		} else if (user instanceof Estudiante) {
-			pInProfesor = new PanelPrincipalProfesor((Profesor) user);
+			iEstudiante = new InterfazEstudiante((Estudiante) user, logica);
+			cambiarPanel("estudianteIni");
 		}
 	}
 	
