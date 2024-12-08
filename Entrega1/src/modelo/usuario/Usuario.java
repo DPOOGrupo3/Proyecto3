@@ -3,12 +3,12 @@ package modelo.usuario;
 public abstract class Usuario {
 	private String nombre;
 	private String email;
-	private String contraseña;
+	private String contrasena;
 	
-	public Usuario(String nombre, String email, String contraseña) {
+	public Usuario(String nombre, String email, String contrasena) {
 		this.nombre = nombre;
 		this.email = email;
-		this.contraseña = contraseña;
+		this.contrasena = contrasena;
 	}
 	
 	
@@ -25,14 +25,14 @@ public abstract class Usuario {
 
 
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
 
 
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContraseña(String contrasena) {
+		this.contrasena = contrasena;
 	}
 
 
@@ -44,7 +44,7 @@ public abstract class Usuario {
 
 
 	public boolean iniciarSesion(String login, String contraseña) {
-		return (login.equals(this.email.substring(0, this.email.indexOf("@"))) && contraseña.equals(this.contraseña));
+		return (login.equals(this.email.substring(0, this.email.indexOf("@"))) && contraseña.equals(this.contrasena));
 	}
 	
 	public String getNombre() {
@@ -53,10 +53,10 @@ public abstract class Usuario {
 	
 	@Override
 	public String toString() {
-		return nombre + "/" + email + "/" + contraseña;
+		return nombre + "/" + email + "/" + contrasena;
 	}
 	
 	public boolean autenticar(String email, String contraseña) {
-		return this.email.equals(email) && this.contraseña.equals(contraseña);
+		return this.email.equals(email) && this.contrasena.equals(contraseña);
 	}
 }

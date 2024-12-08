@@ -213,13 +213,13 @@ public class CentralLogica {
 	    return null;
 	}
 
-	public void registrarUsuario(Usuario nuevoUsuario) {
-	    if (nuevoUsuario instanceof Profesor) {
-	        profesores.add((Profesor) nuevoUsuario);
-	    } else if (nuevoUsuario instanceof Estudiante) {
-	        estudiantes.add((Estudiante) nuevoUsuario); 
-	    } else {
-	        throw new IllegalArgumentException("Tipo de usuario desconocido"); 
+	public void registrarUsuario(String nombre, String correo, String password, String tipoUsuario) {
+	    if (tipoUsuario.equals("Profesor")) {
+	    	Profesor user = new Profesor(nombre, correo, password);
+	    	profesores.add(user);
+	    } else if (tipoUsuario.equals("Estudiante")) {
+	    	Estudiante user = new Estudiante(nombre, correo, password);
+	    	estudiantes.add(user);
 	    }
 	}
 
@@ -283,9 +283,5 @@ public class CentralLogica {
 	        }
 	    }
 	    return disponibles;
-	}
-
-
-	
-	
+	}	
 }

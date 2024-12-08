@@ -76,15 +76,12 @@ public class ConsolaCentral extends ConsolaBasica {
 		String[] opciones = {"Profesor", "Estudiante"};
 		int opcion = this.mostrarMenu("Seleccione el tipo de usuario que desea crear: ", opciones);
 		
-		
-		Usuario nuevoUsuario = null;
-		
 		if (opcion == 1) {
-			nuevoUsuario = new Profesor(nombre, email, password);
+			centralLogica.registrarUsuario(nombre, email, password, "profesor");
 			System.out.println("¡Usuario profesor creado exitosamente!");
 			
 		} else if(opcion == 2) {
-			nuevoUsuario = new Estudiante(nombre, email, password);
+			centralLogica.registrarUsuario(nombre, email, password, "profesor");
 			System.out.println("¡Usuario estudiante creado exitosamente!");
 			
 		} else {
@@ -92,7 +89,6 @@ public class ConsolaCentral extends ConsolaBasica {
 			return;
 		}
 		
-		centralLogica.registrarUsuario(nuevoUsuario);
 		centralLogica.guardarDatos();
 		System.out.println("Datos guardados exitosamente");
 		correrAplicacion();
