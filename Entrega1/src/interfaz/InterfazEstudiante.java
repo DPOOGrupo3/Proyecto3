@@ -79,7 +79,7 @@ public class InterfazEstudiante extends JPanel{
     private void inscribirEnLearningPath()   {
     	List<LearningPath> caminosDisponibles = centralLogica.obtenerLearningPathsDisponibles(estudiante);
     	if (caminosDisponibles.isEmpty()) {
-    		mostrarInformacion("No hay Learning Paths disponobles para la inscripcion.");
+    		mostrarInformacion("No hay Learning Paths disponobles para la inscripcion");
     		
     	}
     	 String[] opciones = caminosDisponibles.stream()
@@ -123,7 +123,7 @@ public class InterfazEstudiante extends JPanel{
     		sb.append("No tienes actividades pendientes");
     	} else {
     		for (Actividad a: Apendientes) {
-    			sb.append(a.getID()).append(("-")).append(a.getDescripcion());
+    			sb.append(a.getID()).append(("-")).append(a.getDescripcion()).append("\n");
     		}
     	}
     	mostrarInformacion(sb.toString());
@@ -227,7 +227,7 @@ public class InterfazEstudiante extends JPanel{
      * Método para salir.
      */
     private void salir() {
-        JOptionPane.showMessageDialog(this, "Saliendo de la sesión.");
+        JOptionPane.showMessageDialog(this, "Saliendo de la sesion");
         System.exit(0);
     }
     
@@ -276,7 +276,7 @@ public class InterfazEstudiante extends JPanel{
                 return caminos.get(indice);
             }
         }
-        mostrarInformacion("Selección inválida.");
+        mostrarInformacion("Selección invalida");
         return null;
     }
     
@@ -289,7 +289,7 @@ public class InterfazEstudiante extends JPanel{
     private Actividad seleccionarActividad(LearningPath camino) {
         List<Actividad> actividades = estudiante.getActividadesPendientes(camino);
         if (actividades.isEmpty()) {
-            mostrarInformacion("No hay actividades pendientes.");
+            mostrarInformacion("No hay actividades pendientes");
             return null;
         }
 
@@ -309,7 +309,7 @@ public class InterfazEstudiante extends JPanel{
                 return actividades.get(indice);
             }
         }
-        mostrarInformacion("Selección inválida.");
+        mostrarInformacion("Seleccion invalida");
         return null;
     }
     
