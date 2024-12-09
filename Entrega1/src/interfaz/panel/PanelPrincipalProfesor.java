@@ -300,7 +300,8 @@ public class PanelPrincipalProfesor extends JPanel implements ActionListener, Li
 	}
 	
 	private void cerrarSesion() {
-		
+		JOptionPane.showMessageDialog(this, "Saliendo de la sesion");
+		interfaz.cambiarPanel("inicial");
 	}
 	
 	private void reiniciarPCentral() {
@@ -315,7 +316,7 @@ public class PanelPrincipalProfesor extends JPanel implements ActionListener, Li
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnCerrarSesion) {
-			interfaz.cambiarPanel("inicial");
+			cerrarSesion();
 		} else {
 			if (e.getSource() == btnCrearLearningPath) {
 				crearLearningPath();

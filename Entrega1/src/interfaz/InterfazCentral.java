@@ -117,7 +117,7 @@ public class InterfazCentral extends InterfazBasica {
 			pInProfesor = new PanelPrincipalProfesor((Profesor) user, this, logica);
 			cambiarPanel("profesorIni");
 		} else if (user instanceof Estudiante) {
-			iEstudiante = new InterfazEstudiante((Estudiante) user, logica);
+			iEstudiante = new InterfazEstudiante((Estudiante) user, logica, this);
 			cambiarPanel("estudianteIni");
 		}
 	}

@@ -24,7 +24,7 @@ public class InterfazEstudiante extends JPanel{
     private JTextArea areaInformacion;
     private Progreso progreso;
    
-    
+    private InterfazCentral interfaz;
     
     
     /**
@@ -32,9 +32,10 @@ public class InterfazEstudiante extends JPanel{
      * @param estudiante El estudiante que está usando la interfaz.
      * @param centralLogica La lógica central del sistema.
      */
-    public InterfazEstudiante(Estudiante estudiante, CentralLogica centralLogica) {
+    public InterfazEstudiante(Estudiante estudiante, CentralLogica centralLogica, InterfazCentral interfaz) {
         this.estudiante = estudiante;
         this.centralLogica = centralLogica;
+        this.interfaz = interfaz;
         
         setLayout(new BorderLayout());
 
@@ -228,7 +229,7 @@ public class InterfazEstudiante extends JPanel{
      */
     private void salir() {
         JOptionPane.showMessageDialog(this, "Saliendo de la sesion");
-        System.exit(0);
+        interfaz.cambiarPanel("inicial");
     }
     
     /**
