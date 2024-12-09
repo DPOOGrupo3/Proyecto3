@@ -48,7 +48,11 @@ public class CentralLogica {
 	
 	
 	
-	public LearningPath crearLearningPath(String titulo, String descripcion, String objetivo, List<Actividad> activdades) {
+	public LearningPath crearLearningPath(String titulo, String descripcion, String objetivo, List<Integer> IDActivdades) {
+		List<Actividad> activdades = new ArrayList<Actividad>();
+		for (int ID: IDActivdades) {
+			activdades.add(encontrarActividadPorID(ID));
+		}
 		LearningPath camino = ((Profesor) user).crearLearningPath(titulo, descripcion, objetivo, activdades);
 		caminos.add(camino);
 		return camino;

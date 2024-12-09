@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import interfaz.InterfazCentral;
@@ -22,7 +23,7 @@ public class PanelRegistrar extends JPanel implements ActionListener, KeyListene
 	private JLabel lblPassword;
 	private JTextField txtNombre;
 	private JTextField txtCorreo;
-	private JTextField txtPassword;
+	private JPasswordField txtPassword;
 	private JButton btnRegistrarse;
 	private JButton btnAtras;
 	private InterfazCentral interfaz;
@@ -53,8 +54,7 @@ public class PanelRegistrar extends JPanel implements ActionListener, KeyListene
 		lblPassword = new JLabel("Contraseña:");
 		add(lblPassword);
 		
-		txtPassword = new JTextField("Ingrese su contraseña");
-		txtPassword.setForeground(Color.GRAY);
+		txtPassword = new JPasswordField();
 		txtPassword.addActionListener(this);
 		txtPassword.addKeyListener(this);
 		add(txtPassword);

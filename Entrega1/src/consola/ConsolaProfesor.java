@@ -63,11 +63,11 @@ public class ConsolaProfesor extends ConsolaBasica {
     	String titulo = pedirCadenaAlUSuario("Ingrese el titulo del Learning Path");
     	String descripcion = pedirCadenaAlUSuario("Ingrese la descripcion del Learning Path");
     	String objetivo = pedirCadenaAlUSuario("Ingrese el objetivo del Learning Path");
-    	 List<Actividad> actividades = seleccionarActividades();
+    	List<Actividad> actividades = seleccionarActividades();
 
     	
-    	LearningPath nuevoPath = centralLogica.crearLearningPath(titulo, descripcion, objetivo, actividades);
-    	System.out.println("Learning Path creado con exito: " + nuevoPath.getID());
+    	//LearningPath nuevoPath = centralLogica.crearLearningPath(titulo, descripcion, objetivo, actividades);
+    	//System.out.println("Learning Path creado con exito: " + nuevoPath.getID());
     	
     	correrConsola();
     	

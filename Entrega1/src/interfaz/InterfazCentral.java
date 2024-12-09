@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 import interfaz.panel.PanelInicial;
 import interfaz.panel.PanelIniciar;
-//import interfaz.panel.PanelPrincipalProfesor;
+import interfaz.panel.PanelPrincipalProfesor;
 import interfaz.panel.PanelRegistrar;
 import modelo.CentralLogica;
 import modelo.usuario.Estudiante;
@@ -24,10 +24,10 @@ public class InterfazCentral extends InterfazBasica {
     private JPanel panelEste;
     
     private PanelInicial pInicial;
-    private PanelRegistrar pRegistrar;
-    private PanelIniciar pIniciar;
-    //private PanelPrincipalProfesor pInProfesor;
-    private InterfazEstudiante iEstudiante;
+    private PanelRegistrar pRegistrar = null;
+    private PanelIniciar pIniciar = null;
+    private PanelPrincipalProfesor pInProfesor = null;
+    private InterfazEstudiante iEstudiante = null;
     
     private CentralLogica logica;
     private Usuario user = null;
@@ -53,8 +53,6 @@ public class InterfazCentral extends InterfazBasica {
         add(panelSur, BorderLayout.SOUTH);
         
         pInicial = new PanelInicial(this);
-        pRegistrar = new PanelRegistrar(this);
-        pIniciar = new PanelIniciar(this);
         add(pInicial, BorderLayout.CENTER);
         
         panelEste = new JPanel();
@@ -66,22 +64,35 @@ public class InterfazCentral extends InterfazBasica {
 	
 	public void cambiarPanel(String panelNombre) {
 		if (panelNombre == "inicial") {
-			remove(pRegistrar);
-			remove(pIniciar);
+			if (pRegistrar != null) {
+				remove(pRegistrar);
+			}
+			if (pIniciar != null) {
+				remove(pIniciar);
+			}
+			if (pInProfesor != null) {
+				remove(pInProfesor);
+			}
+			if (iEstudiante != null) {
+				remove(iEstudiante);
+			}
+			lblBienvenido.setText(bienvinidaGenerica);
 			add(pInicial, BorderLayout.CENTER);
 		}
 		if (panelNombre == "registrar") {
 			remove(pInicial);
+			pRegistrar = new PanelRegistrar(this);
 			add(pRegistrar, BorderLayout.CENTER);
 		}
 		if (panelNombre == "iniciar") {
 			remove(pInicial);
+			pIniciar = new PanelIniciar(this);
 			add(pIniciar, BorderLayout.CENTER);
 		}
 		if (panelNombre == "profesorIni") {
 			lblBienvenido.setText("Bienvenido(a) " + user.getNombre());
 			remove(pIniciar);
-			//add(pInProfesor, BorderLayout.CENTER);
+			add(pInProfesor, BorderLayout.CENTER);
 		}
 		if (panelNombre == "estudianteIni") {
 			lblBienvenido.setText("Bienvenido(a) " + user.getNombre());
@@ -103,7 +114,7 @@ public class InterfazCentral extends InterfazBasica {
 	public void iniciarSesion(String mail, String contra) {
 		user = logica.iniciarSesion(mail, contra);
 		if (user instanceof Profesor) {
-			//pInProfesor = new PanelPrincipalProfesor((Profesor) user);
+			pInProfesor = new PanelPrincipalProfesor((Profesor) user, this, logica);
 			cambiarPanel("profesorIni");
 		} else if (user instanceof Estudiante) {
 			iEstudiante = new InterfazEstudiante((Estudiante) user, logica);
