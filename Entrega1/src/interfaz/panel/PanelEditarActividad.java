@@ -19,81 +19,81 @@ public class PanelEditarActividad extends JPanel implements ActionListener {
 	private JButton btnEditarRespuestas;
 	private JButton btnEditarCalificacionMin;
 	
-	public PanelEditarActividad(String tipo) {
+	public PanelEditarActividad(String tipo, PanelPrincipalProfesor panelProfesor) {
 		if (tipo.equals("RE")) {
 			setLayout(new GridLayout(6, 2, 10, 10));
 			
 			btnEditarDescripcion = new JButton("Editar Descripcion");
-			btnEditarObjetivo = new JButton("Editar Objetivo");
-			btnEditarNivel = new JButton("Editar Nivel");
-			btnEditarDuracion = new JButton("Editar Duracion");
-			btnEditarTipoRescurso = new JButton("Editar Tipo del Recurso");
-			btnEditarRescurso = new JButton("Editar Recurso");
 			add(btnEditarDescripcion);
+			btnEditarObjetivo = new JButton("Editar Objetivo");
 			add(btnEditarObjetivo);
+			btnEditarNivel = new JButton("Editar Nivel");
 			add(btnEditarNivel);
+			btnEditarDuracion = new JButton("Editar Duracion");
 			add(btnEditarDuracion);
+			btnEditarTipoRescurso = new JButton("Editar Tipo del Recurso");
 			add(btnEditarTipoRescurso);
+			btnEditarRescurso = new JButton("Editar Recurso");
 			add(btnEditarRescurso);
 		}
 		if (tipo.equals("T")) {
 			setLayout(new GridLayout(5, 1, 10, 10));
 			
 			btnEditarDescripcion = new JButton("Editar Descripcion");
-			btnEditarObjetivo = new JButton("Editar Objetivo");
-			btnEditarNivel = new JButton("Editar Nivel");
-			btnEditarDuracion = new JButton("Editar Duracion");
-			btnEditarEjercicios = new JButton("Editar Ejercicios");
 			add(btnEditarDescripcion);
+			btnEditarObjetivo = new JButton("Editar Objetivo");
 			add(btnEditarObjetivo);
+			btnEditarNivel = new JButton("Editar Nivel");
 			add(btnEditarNivel);
+			btnEditarDuracion = new JButton("Editar Duracion");
 			add(btnEditarDuracion);
+			btnEditarEjercicios = new JButton("Editar Ejercicios");
 			add(btnEditarEjercicios);
 		}
 		if (tipo.equals("Q")) {
 			setLayout(new GridLayout(7, 1, 10, 10));
 			
 			btnEditarDescripcion = new JButton("Editar Descripcion");
-			btnEditarObjetivo = new JButton("Editar Objetivo");
-			btnEditarNivel = new JButton("Editar Nivel");
-			btnEditarDuracion = new JButton("Editar Duracion");
-			btnEditarPreguntas = new JButton("Editar Preguntas");
-			btnEditarRespuestas = new JButton("Editar Respuestas");
-			btnEditarCalificacionMin = new JButton("Editar Calificaicón Minima");
 			add(btnEditarDescripcion);
+			btnEditarObjetivo = new JButton("Editar Objetivo");
 			add(btnEditarObjetivo);
+			btnEditarNivel = new JButton("Editar Nivel");
 			add(btnEditarNivel);
+			btnEditarDuracion = new JButton("Editar Duracion");
 			add(btnEditarDuracion);
+			btnEditarPreguntas = new JButton("Editar Preguntas");
 			add(btnEditarPreguntas);
+			btnEditarRespuestas = new JButton("Editar Respuestas");
 			add(btnEditarRespuestas);
+			btnEditarCalificacionMin = new JButton("Editar Calificaicón Minima");
 			add(btnEditarCalificacionMin);
 		}
 		if (tipo.equals("P")) {
 			setLayout(new GridLayout(5, 1, 10, 10));
 			
 			btnEditarDescripcion = new JButton("Editar Descripcion");
-			btnEditarObjetivo = new JButton("Editar Objetivo");
-			btnEditarNivel = new JButton("Editar Nivel");
-			btnEditarDuracion = new JButton("Editar Duracion");
-			btnEditarPreguntas = new JButton("Editar Preguntas");
 			add(btnEditarDescripcion);
+			btnEditarObjetivo = new JButton("Editar Objetivo");
 			add(btnEditarObjetivo);
+			btnEditarNivel = new JButton("Editar Nivel");
 			add(btnEditarNivel);
+			btnEditarDuracion = new JButton("Editar Duracion");
 			add(btnEditarDuracion);
+			btnEditarPreguntas = new JButton("Editar Preguntas");
 			add(btnEditarPreguntas);
 		}
 		if (tipo.equals("E")) {
 			setLayout(new GridLayout(5, 1, 10, 10));
 			
 			btnEditarDescripcion = new JButton("Editar Descripcion");
-			btnEditarObjetivo = new JButton("Editar Objetivo");
-			btnEditarNivel = new JButton("Editar Nivel");
-			btnEditarDuracion = new JButton("Editar Duracion");
-			btnEditarPreguntas = new JButton("Editar Preguntas");
 			add(btnEditarDescripcion);
+			btnEditarObjetivo = new JButton("Editar Objetivo");
 			add(btnEditarObjetivo);
+			btnEditarNivel = new JButton("Editar Nivel");
 			add(btnEditarNivel);
+			btnEditarDuracion = new JButton("Editar Duracion");
 			add(btnEditarDuracion);
+			btnEditarPreguntas = new JButton("Editar Preguntas");
 			add(btnEditarPreguntas);
 		}
 	}

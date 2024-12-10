@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>2</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>220</y>
+      <w>32</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>/interfaz::InterfazBasica/
+--
+-panelNorte: JPanel
+-panelSur: JPanel
+-panelCentro: JPanel
+-panelEste: JPanel
+--
++InterfazBasica(): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>142</y>
+      <w>114</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>interfaz::InterfazCentral
+--
+-bienvinidaGenerica = "Bienvenido(a) a Learning Path Recomendation System": String
+-panelNorte: JPanel
+-lblBienvenido = new JLabel(""): JLabel
+-panelSur: JPanel
+-panelEste: JPanel
+-pInicial: PanelInicial
+-pRegistrar = null: PanelRegistrar
+-pIniciar = null: PanelIniciar
+-pInProfesor = null: PanelPrincipalProfesor
+-iEstudiante = null: InterfazEstudiante
+-logica: CentralLogica
+-user = null: Usuario
+--
++InterfazCentral(): ctor
++cambiarPanel(String panelNombre): void
++salir(): void
++registrarUsuario(String nombre, String correo, String password, String tipoUsuario): void
++iniciarSesion(String mail, String contra): void
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>142</y>
+      <w>130</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>interfaz::InterfazEstudiante
+--
+-estudiante: Estudiante
+-centralLogica: CentralLogica
+-panelBotones: JPanel
+-areaInformacion: JTextArea
+-progreso: Progreso
+-interfaz: InterfazCentral
+--
++InterfazEstudiante(Estudiante estudiante, CentralLogica centralLogica, InterfazCentral interfaz): ctor
+-inicializar(): void
+-inscribirEnLearningPath(): void
+-verActividadesPendientes(): void
+-verProgresoLearningPath(): void
+-interactuarConActividad(): void
+-entregarActividad(): void
+-visualizarActividades(): void
+-salir(): void
+-agregarBoton(String texto, ActionListener action): void
+-mostrarInformacion(String mensaje): void
+-seleccionarLearningPath(): LearningPath
+-seleccionarActividad(LearningPath camino): Actividad
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>434</y>
+      <w>100</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>/interfaz.panel::PanelActividad/
+--
+#lblDescripcion = new JLabel("Ingrese la descripción de la actividad:"): JLabel
+#lblObjetivo = new JLabel("Ingrese el objetivo de la actividad:"): JLabel
+#lblNivel = new JLabel("Ingrese el nivel de dificultad de la actividad:"): JLabel
+#lblDuracion = new JLabel("Ingrese la duración de la actividad:"): JLabel
+#txtDescripcion = new JTextField(): JTextField
+#txtObjetivo = new JTextField(): JTextField
+#txtNivel = new JTextField(): JTextField
+#txtDuracion = new JTextField(): JTextField
+--
++getDescripcion(): String
++getObjetivo(): String
++getNivel(): int
++getDuracion(): Double
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>362</x>
+      <y>434</y>
+      <w>52</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelEditarActividad
+--
+-btnEditarDescripcion: JButton
+-btnEditarObjetivo: JButton
+-btnEditarNivel: JButton
+-btnEditarDuracion: JButton
+-btnEditarTipoRescurso: JButton
+-btnEditarRescurso: JButton
+-btnEditarEjercicios: JButton
+-btnEditarPreguntas: JButton
+-btnEditarRespuestas: JButton
+-btnEditarCalificacionMin: JButton
+--
++PanelEditarActividad(String tipo): ctor
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>484</x>
+      <y>434</y>
+      <w>54</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelEditarLearningPath
+--
+-btnEditarTitulo: JButton
+-btnEditarDescripcion: JButton
+-btnEditarObjetivo: JButton
+-btnAnadirActividad: JButton
+-btnEliminarActividad: JButton
+--
++PanelEditarLearningPath(): ctor
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>556</x>
+      <y>488</y>
+      <w>72</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelEliminarActividad
+--
+-modeloDatos: DefaultListModel&lt;String&gt;
+-listaActividades: JList&lt;String&gt;
+--
++PanelEliminarActividad(List&lt;String&gt; actividades): ctor
++getActividadSeleccionada(): int
++valueChanged(ListSelectionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>526</y>
+      <w>66</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelEliminarLP
+--
+-modeloDatos: DefaultListModel&lt;String&gt;
+-listaLP: JList&lt;String&gt;
+--
++PanelEliminarLP(List&lt;String&gt; learningPaths): ctor
++getLearningPathSeleccionado(): int
++valueChanged(ListSelectionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>434</y>
+      <w>66</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelEncuesta
+--
+-preguntas = new ArrayList&lt;String&gt;(): List&lt;String&gt;
+-rows: int
+--
++PanelEncuesta(int cantPreguntas): ctor
++getPreguntas(): List&lt;String&gt;
++keyTyped(KeyEvent e): void
++keyPressed(KeyEvent e): void
++keyReleased(KeyEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>488</y>
+      <w>56</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelInicial
+--
+-lblVacio = new JLabel(" "): JLabel
+-btnRegistrarse: JButton
+-btnIniciarSesion: JButton
+-btnSalir: JButton
+-interfaz: InterfazCentral
+--
++PanelInicial(InterfazCentral interfaz): ctor
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>556</x>
+      <y>258</y>
+      <w>60</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelIniciar
+--
+-lblVacio = new JLabel(" "): JLabel
+-lblCorreo: JLabel
+-lblPassword: JLabel
+-txtCorreo: JTextField
+-txtPassword: JPasswordField
+-btnLogIn: JButton
+-btnAtras: JButton
+-interfaz: InterfazCentral
+--
++PanelIniciar(InterfazCentral interfaz): ctor
+-verificarCorreo(): void
+-verificarTextoVacio(): void
+-iniciarSesion(String mail, String contra): void
++actionPerformed(ActionEvent e): void
++keyTyped(KeyEvent e): void
++keyPressed(KeyEvent e): void
++keyReleased(KeyEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>446</x>
+      <y>258</y>
+      <w>108</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelLearningPath
+--
+-lblTitle = new JLabel("Ingrese el título del Learning Path:"): JLabel
+-lblDescripcion = new JLabel("Ingrese la descripción del Learning Path:"): JLabel
+-lblObjetivo = new JLabel("Ingrese el objetivo del Learning Path:"): JLabel
+-lblActividades = new JLabel("Sleccione las actividades del Learning Path:"): JLabel
+-txtTitle = new JTextField(): JTextField
+-txtDescripcion = new JTextField(): JTextField
+-txtObjetivo = new JTextField(): JTextField
+-txtActividades = new JTextField(): JTextField
+-btnAnadirActividad = new JButton("Añadir Actividad"): JButton
+-actividadesDispo = new ArrayList&lt;String&gt;(): List&lt;String&gt;
+-actividades = new ArrayList&lt;Integer&gt;(): List&lt;Integer&gt;
+--
++PanelLearningPath(List&lt;Actividad&gt; actividadesDispo): ctor
++getTitle(): String
++getDescripcion(): String
++getObjetivo(): String
++getActividades(): List&lt;Integer&gt;
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>318</x>
+      <y>488</y>
+      <w>66</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelParcial
+--
+-preguntas = new ArrayList&lt;String&gt;(): List&lt;String&gt;
+-rows: int
+--
++PanelParcial(int cantPreguntas): ctor
++getPreguntas(): List&lt;String&gt;
++keyTyped(KeyEvent e): void
++keyPressed(KeyEvent e): void
++keyReleased(KeyEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>258</y>
+      <w>122</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelPrincipalProfesor
+--
+-profesor: Profesor
+-interfaz: InterfazCentral
+-central: CentralLogica
+-lblVacio = new JLabel(" "): JLabel
+-btnCrearLearningPath: JButton
+-btnEditarLearningPath: JButton
+-btnEliminarLearningPath: JButton
+-btnCrearActividad: JButton
+-btnGestionarActividad: JButton
+-btnEliminarActividad: JButton
+-btnConsultarLearningPathsCreados: JButton
+-btnCerrarSesion: JButton
+-pBotones = new JPanel(): JPanel
+-pCentral = new JPanel(): JPanel
+-tipoAct = "": String
+-actividades = new ArrayList&lt;Actividad&gt;(): List&lt;Actividad&gt;
+-pLP: PanelLearningPath
+-pEditarLP: PanelEditarLearningPath
+-pEliminarLP: PanelEliminarLP
+-pRecurso = new PanelRecursoEducativo(): PanelRecursoEducativo
+-pTarea: PanelTarea
+-pQuiz: PanelQuiz
+-pParcial: PanelParcial
+-pEncuesta: PanelEncuesta
+-pEditarAct: PanelEditarActividad
+-pEliminarActividad: PanelEliminarActividad
+~modeloDatos: DefaultListModel&lt;String&gt;
+~listaLP: JList&lt;String&gt;
+-cancelar = "CANCELAR": String
+-confirmarCLP = "CONFRIMARCLP": String
+-confirmarELP = "CONFRIMARELP": String
+-confirmarRLP = "CONFRIMARRLP": String
+-confirmarCA = "CONFRIMARCA": String
+-confirmarGA = "CONFRIMARGA": String
+-confirmarEA = "CONFRIMAREA": String
+--
++PanelPrincipalProfesor(Profesor profesor, InterfazCentral interfaz, CentralLogica central): ctor
+-crearLearningPath(): void
+-editarLearningPath(): void
+-eliminarLearningPath(): void
+-crearActividad(): void
+-gestionarActividad(): void
+-eliminarActividad(): void
+-consultarLearningPaths(): void
+-cerrarSesion(): void
+-reiniciarPCentral(): void
++actionPerformed(ActionEvent e): void
+-encontrarActividadPorID(int IDActividad): Actividad
++valueChanged(ListSelectionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>434</y>
+      <w>66</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelQuiz
+--
+-preguntas = new ArrayList&lt;String&gt;(): List&lt;String&gt;
+-respuestas = new ArrayList&lt;String&gt;(): List&lt;String&gt;
+-rows: int
+--
++PanelQuiz(int cantPreguntas): ctor
++getPreguntas(): List&lt;String&gt;
++getRespuestas(): List&lt;String&gt;
++keyTyped(KeyEvent e): void
++keyPressed(KeyEvent e): void
++keyReleased(KeyEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>386</x>
+      <y>488</y>
+      <w>100</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelRecursoEducativo
+--
+-lblTipoRecurso = new JLabel("Ingrese el tipo de recurso educativo:"): JLabel
+-lblRecurso = new JLabel("Ingrese el recurso educativo:"): JLabel
+-txtTipoRecurso = new JTextField(): JTextField
+-txtRecurso = new JTextField(): JTextField
+--
++PanelRecursoEducativo(): ctor
++getTipoRecurso(): String
++getRecurso(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>384</x>
+      <y>258</y>
+      <w>60</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelRegistrar
+--
+-lblVacio = new JLabel(" "): JLabel
+-lblNombre: JLabel
+-lblCorreo: JLabel
+-lblPassword: JLabel
+-txtNombre: JTextField
+-txtCorreo: JTextField
+-txtPassword: JPasswordField
+-btnRegistrarse: JButton
+-btnAtras: JButton
+-interfaz: InterfazCentral
+--
++PanelRegistrar(InterfazCentral interfaz): ctor
+-verificarTextoVacio(): void
+-verificarCorreo(): void
+-registrarUsuario(): void
++actionPerformed(ActionEvent e): void
++keyTyped(KeyEvent e): void
++keyPressed(KeyEvent e): void
++keyReleased(KeyEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>488</y>
+      <w>66</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel::PanelTarea
+--
+-ejercicios = new ArrayList&lt;String&gt;(): List&lt;String&gt;
+-rows: int
+--
++PanelTarea(int cantEjercicios): ctor
++getEjercicios(): List&lt;String&gt;
++keyTyped(KeyEvent e): void
++keyPressed(KeyEvent e): void
++keyReleased(KeyEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>258</x>
+      <y>136</y>
+      <w>250</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>interfaz
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>258</x>
+      <y>252</y>
+      <w>372</w>
+      <h>308</h>
+    </coordinates>
+    <panel_attributes>interfaz.panel
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>212</y>
+      <w>108</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;90.0;520.0;90.0;520.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>422</x>
+      <y>212</y>
+      <w>66</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;230.0;10.0;160.0;310.0;160.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>492</x>
+      <y>212</y>
+      <w>98</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>470.0;230.0;470.0;170.0;10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>356</x>
+      <y>212</y>
+      <w>114</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;230.0;10.0;130.0;550.0;130.0;550.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>242</x>
+      <y>200</y>
+      <w>426</w>
+      <h>374</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90.0;1530.0;10.0;1530.0;10.0;1850.0;2110.0;1850.0;2110.0;20.0;1320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>326</y>
+      <w>130</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>630.0;10.0;630.0;60.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>428</y>
+      <w>6</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>418</y>
+      <w>28</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;80.0;120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>400</y>
+      <w>56</w>
+      <h>38</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>260.0;170.0;260.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>386</y>
+      <w>130</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>630.0;240.0;630.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>374</y>
+      <w>192</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>940.0;300.0;940.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>364</y>
+      <w>234</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1150.0;620.0;1150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>242</x>
+      <y>414</y>
+      <w>22</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90.0;610.0;20.0;610.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>398</y>
+      <w>96</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>460.0;460.0;460.0;820.0;10.0;820.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>408</y>
+      <w>196</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>960.0;580.0;960.0;780.0;20.0;780.0;10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>412</y>
+      <w>278</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1370.0;560.0;1370.0;780.0;10.0;770.0;10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>628</y>
+      <w>126</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>610.0;60.0;590.0;50.0;150.0;50.0;30.0;10.0;210.0;270.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>374</y>
+      <w>374</w>
+      <h>206</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1850.0;710.0;1850.0;1010.0;10.0;1010.0;10.0;10.0;220.0;10.0</additional_attributes>
+  </element>
+</diagram>

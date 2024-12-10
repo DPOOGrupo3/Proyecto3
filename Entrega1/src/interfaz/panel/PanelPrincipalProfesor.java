@@ -44,19 +44,27 @@ public class PanelPrincipalProfesor extends JPanel implements ActionListener, Li
 	private JPanel pBotones = new JPanel();
 	private JPanel pCentral = new JPanel();
 	private String tipoAct = "";
+	private List<LearningPath> caminos = new ArrayList<LearningPath>();
 	private List<Actividad> actividades = new ArrayList<Actividad>();
 	private PanelLearningPath pLP;
 	private PanelEditarLearningPath pEditarLP;
+	private PanelEditarLP pCentralEditarLP;
+	private PanelEditarLPAct pCentralEditarLPAct;
 	private PanelEliminarLP pEliminarLP;
+	private LearningPath lP;
 	private PanelRecursoEducativo pRecurso = new PanelRecursoEducativo();
 	private PanelTarea pTarea;
 	private PanelQuiz pQuiz;
 	private PanelParcial pParcial;
 	private PanelEncuesta pEncuesta;
 	private PanelEditarActividad pEditarAct;
+	//private PanelEd pCentralEditarAct;
 	private PanelEliminarActividad pEliminarActividad;
+	private Actividad Act;
+	int ID = -1;
 	DefaultListModel<String> modeloDatos;
 	JList<String> listaLP;
+	private String cambio;
 	private static String cancelar = "CANCELAR";
 	private static String confirmarCLP = "CONFRIMARCLP";
 	private static String confirmarELP = "CONFRIMARELP";
@@ -71,6 +79,7 @@ public class PanelPrincipalProfesor extends JPanel implements ActionListener, Li
 		this.profesor = profesor;
 		this.interfaz = interfaz;
 		this.central = central;
+		caminos.addAll(profesor.getCaminosCreados());
 		profesor.getCaminosCreados().forEach(camino -> actividades.addAll(camino.getActivdades()));
 		
 		pBotones.setLayout(new GridLayout(8, 1, 10, 10));
@@ -127,13 +136,18 @@ public class PanelPrincipalProfesor extends JPanel implements ActionListener, Li
 	}
 	
 	private void editarLearningPath() {
-		String[] caminos = profesor.getCaminosCreados().stream().map(c -> c.getID() + " - " + c.getTitulo()).toArray(String[]::new);
-		String camino = (String) JOptionPane.showInputDialog(this, "Seleccione un tipo de actividad:", "Tipo Actividad", JOptionPane.QUESTION_MESSAGE, null, caminos, caminos[0]);
+		if (ID < 0) {
+			String[] caminos = profesor.getCaminosCreados().stream().map(c -> c.getID() + " - " + c.getTitulo()).toArray(String[]::new);
+			String camino = (String) JOptionPane.showInputDialog(this, "Seleccione un tipo de actividad:", "Tipo Actividad", JOptionPane.QUESTION_MESSAGE, null, caminos, caminos[0]);
+			ID = Integer.parseInt(camino.split(" - ")[0]);
+			lP = encontrarLearningPathPorID(ID);
+		}
+		
 		pCentral.setLayout(new BorderLayout());
 		
 		JPanel pSur = new JPanel();
 		pSur.setLayout(new FlowLayout());
-		pEditarLP = new PanelEditarLearningPath();
+		pEditarLP = new PanelEditarLearningPath(this);
 		JPanel pCentro = pEditarLP;
 		
 		JButton btnCancelar = new JButton("Cancelar");
@@ -217,15 +231,20 @@ public class PanelPrincipalProfesor extends JPanel implements ActionListener, Li
 	}
 	
 	private void gestionarActividad() {
-		List<String> actividadesAL = new ArrayList<String>();
-		profesor.getCaminosCreados().forEach(camino -> camino.getActivdades().forEach(acti -> actividadesAL.add(String.valueOf(acti.getID()))));
-		String[] actividades = actividadesAL.toArray(String[]::new);
-		String actividad = (String) JOptionPane.showInputDialog(this, "Seleccione una actividad:", "Actividad a Editar", JOptionPane.QUESTION_MESSAGE, null, actividades, actividades[0]);
+		if (ID < 0) {
+			List<String> actividadesAL = new ArrayList<String>();
+			profesor.getCaminosCreados().forEach(camino -> camino.getActivdades().forEach(acti -> actividadesAL.add(String.valueOf(acti.getID()))));
+			String[] actividades = actividadesAL.toArray(String[]::new);
+			String actividad = (String) JOptionPane.showInputDialog(this, "Seleccione una actividad:", "Actividad a Editar", JOptionPane.QUESTION_MESSAGE, null, actividades, actividades[0]);
+			ID = Integer.parseInt(actividad.split(" - ")[0]);
+			Act = encontrarActividadPorID(ID);
+		}
+		
 		pCentral.setLayout(new BorderLayout());
 		
 		JPanel pSur = new JPanel();
 		pSur.setLayout(new FlowLayout());
-		pEditarAct = new PanelEditarActividad(encontrarActividadPorID(Integer.parseInt(actividad)).getTipo());
+		pEditarAct = new PanelEditarActividad(Act.getTipo(), this);
 		JPanel pCentro = pEditarAct;
 		
 		JButton btnCancelar = new JButton("Cancelar");
@@ -344,40 +363,157 @@ public class PanelPrincipalProfesor extends JPanel implements ActionListener, Li
 		}
 		if (e.getActionCommand() == cancelar) {
 			reiniciarPCentral();
+			if (ID >= 0) {
+				ID = -1;
+			}
 		}
 		if (e.getActionCommand() == confirmarCLP) {
 			central.crearLearningPath(pLP.getTitle(), pLP.getDescripcion(), pLP.getObjetivo(), pLP.getActividades());
+			pLP = null;
 			reiniciarPCentral();
 		}
 		if (e.getActionCommand() == confirmarELP) {
-			central.crearLearningPath(pLP.getTitle(), pLP.getDescripcion(), pLP.getObjetivo(), pLP.getActividades());
+			if (cambio.contains("Título")) {
+				central.cambiarTituloLearningPath(ID, cambio);
+			} else if (cambio.contains("Descripción")) {
+				central.cambiarDescrpcionLearningPath(ID, cambio);
+			} else if (cambio.contains("Objetivo")) {
+				central.cambiarObjetivoLearningPath(ID, cambio);
+			} else if (cambio.contains("Añadir")) {
+				central.agregarActividadLearningPath(ID, pCentralEditarLPAct.getLearningPathSeleccionado());
+			} else if (cambio.contains("Eliminar")) {
+				central.eliminarsActividadLearningPath(ID, pCentralEditarLPAct.getLearningPathSeleccionado());
+			}
+			pCentralEditarLP = null;
+			pCentralEditarLPAct = null;
+			if (ID >= 0) {
+				ID = -1;
+			}
 			reiniciarPCentral();
 		}
 		if (e.getActionCommand() == confirmarRLP) {
 			central.eliminarLearningPathCreado(pEliminarLP.getLearningPathSeleccionado());
+			pEliminarLP = null;
 			reiniciarPCentral();
 		}
 		if (e.getActionCommand() == confirmarCA) {
 			if (tipoAct.equals("Recurso Educativo")) {
 				central.crearActividad(pRecurso.getDescripcion(), pRecurso.getObjetivo(), "RE", pRecurso.getNivel(), pRecurso.getDuracion(), new ArrayList<Integer>(), pRecurso.getRecurso(), pRecurso.getTipoRecurso(), null, null, null, 0);
+				pRecurso = new PanelRecursoEducativo();
 			} else if (tipoAct.equals("Tarea")) {
 				List<String> ejercicios = pTarea.getEjercicios();
 				central.crearActividad(pTarea.getDescripcion(), pTarea.getObjetivo(), "T", pTarea.getNivel(), pTarea.getDuracion(), new ArrayList<Integer>(), null, null, ejercicios, null, null, 0);
+				pTarea = null;
 			} else if (tipoAct.equals("Quiz")) {
 				List<String> preguntas = pQuiz.getPreguntas();
 				List<String> respuestas = pQuiz.getRespuestas();
 				central.crearActividad(pQuiz.getDescripcion(), pQuiz.getObjetivo(), "Q", pQuiz.getNivel(), pQuiz.getDuracion(), new ArrayList<Integer>(), null, null, null, preguntas, respuestas, 0);
+				pQuiz = null;
+			} else if (tipoAct.equals("Parcial")) {
+				List<String> preguntas = pParcial.getPreguntas();
+				central.crearActividad(pParcial.getDescripcion(), pParcial.getObjetivo(), "P", pParcial.getNivel(), pParcial.getDuracion(), new ArrayList<Integer>(), null, null, null, preguntas, null, 0);
+				pParcial = null;
+			} else if (tipoAct.equals("Encuesta")) {
+				List<String> preguntas = pEncuesta.getPreguntas();
+				central.crearActividad(pEncuesta.getDescripcion(), pEncuesta.getObjetivo(), "E", pEncuesta.getNivel(), pEncuesta.getDuracion(), new ArrayList<Integer>(), null, null, null, preguntas, null, 0);
+				pEncuesta = null;
 			}
 			reiniciarPCentral();
 		}
 		if (e.getActionCommand() == confirmarGA) {
-			central.crearLearningPath(pLP.getTitle(), pLP.getDescripcion(), pLP.getObjetivo(), pLP.getActividades());
+			if (cambio.contains("Título")) {
+				central.cambiarTituloLearningPath(ID, cambio);
+			} else if (cambio.contains("Descripción")) {
+				central.cambiarDescrpcionLearningPath(ID, cambio);
+			} else if (cambio.contains("Objetivo")) {
+				central.cambiarObjetivoLearningPath(ID, cambio);
+			} else if (cambio.contains("Añadir")) {
+				central.agregarActividadLearningPath(ID, pCentralEditarLPAct.getLearningPathSeleccionado());
+			} else if (cambio.contains("Eliminar")) {
+				central.eliminarsActividadLearningPath(ID, pCentralEditarLPAct.getLearningPathSeleccionado());
+			}
+			//pCentralEditarLP = null;
+			//pCentralEditarLPAct = null;
+			if (ID >= 0) {
+				ID = -1;
+			}
 			reiniciarPCentral();
 		}
 		if (e.getActionCommand() == confirmarEA) {
 			central.eliminarActividad(pEliminarActividad.getActividadSeleccionada());
+			pEliminarActividad = null;
 			reiniciarPCentral();
 		}
+		if (e.getActionCommand() == "atrasLP") {
+			if (pCentralEditarLP != null) {
+				pCentral.remove(pCentralEditarLP);
+				pCentralEditarLP = null;
+			}
+			if (pCentralEditarLPAct != null) {
+				pCentral.remove(pCentralEditarLPAct);
+				pCentralEditarLPAct = null;
+			}
+			cambio = "";
+			editarLearningPath();
+			repaint();
+			validate();
+		}
+		if (e.getActionCommand() == "atrasA") {
+			//pCentral.remove();
+			cambio = "";
+			gestionarActividad();
+			repaint();
+			validate();
+		}
+	}
+	
+	public void editarLP(String pCambio) {
+		reiniciarPCentral();
+		
+		cambio = pCambio;
+		pCentral.setLayout(new BorderLayout());
+		
+		JPanel pSur = new JPanel();
+		pSur.setLayout(new FlowLayout());
+		JPanel pCentro;
+		if (cambio.contains("Editar")) {
+			pCentralEditarLP = new PanelEditarLP(cambio, this);
+			pCentro = pCentralEditarLP;
+		} else {
+			List<String> listaActividades = new ArrayList<String>();
+			lP.getActivdades().forEach(act -> listaActividades.add(act.getID() + ". " + act.getDescripcion()));
+			pCentralEditarLPAct = new PanelEditarLPAct(listaActividades, this);
+			pCentro = pCentralEditarLPAct;
+		}
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(this);
+		btnCancelar.setActionCommand(cancelar);
+		JButton btnConfirmar = new JButton("Confirmar");
+		btnConfirmar.addActionListener(this);
+		btnConfirmar.setActionCommand(confirmarELP);
+		
+		pSur.add(btnCancelar);
+		pSur.add(btnConfirmar);
+		
+		pCentral.add(pSur, BorderLayout.SOUTH);
+		pCentral.add(pCentro, BorderLayout.CENTER);
+		
+		repaint();
+		validate();
+	}
+	
+	public void editarActividad(String pCambio) {
+		
+	}
+	
+	private LearningPath encontrarLearningPathPorID(int IDCamino) {
+		for (LearningPath camino: caminos) {
+			if (camino.getID()==IDCamino) {
+				return camino;
+			}
+		}
+		return new LearningPath("", "", "", new ArrayList<Actividad>());
 	}
 	
 	private Actividad encontrarActividadPorID(int IDActividad) {

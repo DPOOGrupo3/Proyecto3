@@ -72,9 +72,11 @@ public class InterfazCentral extends InterfazBasica {
 			}
 			if (pInProfesor != null) {
 				remove(pInProfesor);
+				pInProfesor = null;
 			}
 			if (iEstudiante != null) {
 				remove(iEstudiante);
+				iEstudiante = null;
 			}
 			lblBienvenido.setText(bienvinidaGenerica);
 			add(pInicial, BorderLayout.CENTER);
